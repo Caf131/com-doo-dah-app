@@ -1,9 +1,10 @@
 <?php
 
-include("const_db.inc");
+	include("const_db.inc"); 
 
-	$deleteUser = $_POST['Username']; 
-				
+	$updateUsername = $_POST["Username"];
+	$newPassword = $_POST["Password"]; 
+	
 	$link = mysqli_connect($host, $username, $password, $dbname, $port);
 
 	if (mysqli_connect_errno()) 
@@ -12,7 +13,7 @@ include("const_db.inc");
 		exit();
 	}
 	 
-	$queryString = "DELETE FROM User WHERE UserName = '".$deleteUser."'"; 
+	$queryString = "UPDATE User SET Password='".$newPassword."'WHERE UserName='".$updateUsername."'"; 
 	
 	$queryDeleteUser = mysqli_query($link, $queryString);   
 		
@@ -22,9 +23,11 @@ include("const_db.inc");
 	}
 	else
 	{
-		echo "The username ".$deleteUser." has been deleted successfully"; 
+		echo "The username ".$updateUsername." has been updated successfully"; 
 		echo "<p><a href='AdministratorView.php'>Return to Administrator Portal</a></p>"; 
 	}
 	
 	mysqli_close($link);
+	
+
 ?>

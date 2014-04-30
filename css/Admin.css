@@ -8,7 +8,8 @@
 }
 
 .pnl-add-user,
-.pnl-delete-user
+.pnl-delete-user,
+.pnl-update-user
 {
 	position: absolute;
 	height: auto;
@@ -33,6 +34,7 @@
 	font-weight: bold;
 	font-size: 29px;
 	color: red;
+	padding-right: 30px; 
 }
 
 .admin-reg-form-label

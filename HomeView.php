@@ -46,25 +46,6 @@ session_start();
 				<h1> Welcome to Doo-Dah!</h1>
 				<div id="image-strip"></div>
 				<div id="registrationControl"></div>
-				<!--<h1 id="header-text">Login to your account</h1>
-				<table class="login-table">
-                <tr>
-                    <td>Username:</td>
-                    <td><input style="width: 175px;" type="text" placeholder="Enter username"></input></td>
-                </tr>
-                <tr>
-                    <td>Password:</td>
-                    <td><input style="width: 175px;" type="password" placeholder="Enter password"></input></td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td><button type='button' id="login-button" name="submit" target="#" class='btn-form'>Log In</button></td>
-                </tr>
-               <tr>
-                    <td></td>
-                    <td><button type='button' id="login-button" name="forgot-pw" target="#" class='btn-form'>Forget Password?</button></td>
-                </tr>                
-            </table>    -->
 			</div>
 		</div>
 		<div id="footer" class="footer">

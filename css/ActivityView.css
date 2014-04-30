@@ -16,3 +16,17 @@
 {
 	padding-bottom: 20px; 
 }
+
+#userInfo
+{
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	height: 20px;
+	width: auto;
+	text-align: center;
+	font-size: 20px;
+	background-color: cornflowerblue;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}

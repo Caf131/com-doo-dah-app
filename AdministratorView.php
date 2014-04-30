@@ -27,7 +27,7 @@ if(!isset($_SESSION['UserId']))
 							<ul id="adminPortal">
 								<li><div id="addUser" class="admin-links">Add User</div></li>
 								<li><div id="deleteUser" class="admin-links">Delete User</div></li>
-								<!--<li><div id="addActivity" class="admin-links">Add Activity</div></li>-->
+								<li><div id="updateUser" class="admin-links">Update User</div></li>
 							</ul>
 						</div>
 			</div>

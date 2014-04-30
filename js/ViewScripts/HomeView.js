@@ -43,6 +43,7 @@ $(document).ready(function(){
 	registrationControl.RegistrationControl({
 		DataManager: DooDah.Services.LoginService,
 		IsLoginControl: true,
-		LinkRegistration: "./RegistrationView.php"
+		LinkRegistration: "RegistrationView.php",
+		LinkForgotPassword: "ForgotPasswordView.php"
 	}); 
 }); 
