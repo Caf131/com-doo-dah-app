@@ -2,16 +2,18 @@ $(document).ready(function ()
 {
 	var lnkAddUser = $("#addUser"); 
 	var lnkDeleteUser = $("#deleteUser"); 
-	var lnkAddActivity = $("deleteUser"); 
+	var lnkUpdateUser = $("#updateUser"); 
 	var pnlAddUser = null; 
 	var pnlDeleteUser = null;
-	var pnlAddActivity = null; 
+	var pnlUpdateUser = null; 
 	var txtFirstName = null; 
 	var txtLastName = null;
 	var txtEmail = null;
 	var txtUsername = null; 
 	var txtPassword = null; 
 	var txtDeleteUser = null; 
+	var txtUpdateUsername = null;
+	var txtUpdatePassword = null; 
 	
 	var SetupAddUserPanel = function ()
 	{
@@ -124,6 +126,51 @@ $(document).ready(function ()
 		
 	}; 
 	
+	var SetupUpdateUserPanel = function ()
+	{
+		lnkUpdateUser.click(lnkUpdateUser_click); 
+		
+		pnlUpdateUser = $("<div></div>")
+			.addClass("pnl-update-user")
+			.appendTo("body")
+			.hide(); 
+			
+		var title = $("<h3 style='color:red;'>Update User Account</h3>")
+			.appendTo(pnlUpdateUser); 
+			
+		var pnlUpdateUserForm = $("<form name='input' action='UpdateUser.php' method='post'></form>")
+			.appendTo(pnlUpdateUser);  
+			
+		txtUpdateUsername = $("<input type='text' name='Username'/>")
+			.addClass("admin-reg-form-input")
+			.appendTo(pnlUpdateUserForm); 
+			
+		var lblUpdateUser = $("<label/>")
+			.addClass("admin-reg-form-label")
+			.html("Update Username:")
+			.appendTo(pnlUpdateUserForm)
+			.append(txtUpdateUsername); 
+		
+		txtUpdatePassword = $("<input type='text' name='Password'/>")
+			.addClass("admin-reg-form-input")
+			.appendTo(pnlUpdateUserForm); 
+			
+		var lblUpdatePassword = $("<label/>")
+			.addClass("admin-reg-form-label")
+			.html("Update Password:")
+			.appendTo(pnlUpdateUserForm)
+			.append(txtUpdatePassword); 
+		
+		var submit = $("<input type='submit' value='Update User'>")
+			.appendTo(pnlUpdateUserForm); 
+			
+		pnlUpdateUserForm.submit(ValidateUpdateUser); 
+
+		var btnClose = $("<button name='Close'>Close</button>")
+			.appendTo(pnlUpdateUser)
+			.click(btnClose_click);
+	}; 
+	
 	var Validate = function()
 	{
 		var firstName = txtFirstName.val();
@@ -176,25 +223,58 @@ $(document).ready(function ()
 		}
 		
 		return true; 
-	}
+	}; 
+	
+	var ValidateUpdateUser = function ()
+	{
+		var userToUpdate = txtUpdateUsername.val(); 
+		var newPassword = txtUpdatePassword.val(); 
+		
+		if(userToUpdate == null || userToUpdate == "")
+		{
+			alert("Provide a username to update"); 
+			return false; 
+		}
+		
+		if (newPassword == null || userToUpdate == "")
+		{
+			alert("Provide a new password"); 
+			return false; 
+		}
+		
+		return true; 
+	}; 
+	
+	var lnkUpdateUser_click = function ()
+	{
+		if(pnlDeleteUser.is(":visible") || pnlAddUser.is(":visible"))
+		{
+			pnlDeleteUser.hide(); 
+			pnlAddUser.hide(); 
+		}
+
+		pnlUpdateUser.show(); 
+	}; 
 	
 	var lnkAddUser_click = function ()
 	{
-		if(pnlDeleteUser.is(":visible"))
+		if(pnlDeleteUser.is(":visible") || pnlUpdateUser.is(":visible"))
 		{
+			pnlUpdateUser.hide(); 
 			pnlDeleteUser.hide(); 
 		}
-		
-		pnlAddUser.show(); 
+
+		pnlAddUser.show(); 		
 	}; 
 	
 	var lnkDeleteUser_click = function ()
 	{
-		if(pnlAddUser.is(":visible"))
+		if(pnlUpdateUser.is(":visible") || pnlAddUser.is(":visible"))
 		{
-			pnlAddUser.hide(); 	
+			pnlUpdateUser.hide(); 
+			pnlAddUser.hide(); 
 		}
-	
+		
 		pnlDeleteUser.show(); 
 	}; 
 	
@@ -206,6 +286,8 @@ $(document).ready(function ()
 		txtUsername.val(""); 
 		txtPassword.val(""); 
 		txtDeleteUser.val(""); 
+		txtUpdateUsername.val(""); 
+		txtUpdatePassword.val(""); 
 	}; 
 	
 	var btnClose_click = function ()
@@ -221,11 +303,17 @@ $(document).ready(function ()
 		{
 			pnlDeleteUser.hide(); 
 		}
+		
+		if(pnlUpdateUser.is(":visible"))
+		{
+			pnlUpdateUser.hide(); 
+		}
 	}; 
 	
 	
 	SetupAddUserPanel(); 
 	SetupDeleteUserPanel(); 
+	SetupUpdateUserPanel(); 
 
 
 }); 

@@ -28,7 +28,7 @@ if(!isset($_SESSION['UserId']))
                     <div id="nav-list">
                         <ul>
                             <!--<li class="top-level"><a href="./HomeView.php" id="home">Home</a></li>-->
-                            <li class="top-level"><a href="#" id="how" title="Take the tutorial if you are a newcomer or view help documentation.">How it works?</a></li>
+                            <!--<li class="top-level"><a href="#" id="how" title="Take the tutorial if you are a newcomer or view help documentation.">How it works?</a></li>-->
                             <li class="top-level"><a href="EmotionSelection.php" id="emotions" title="Pick your current emotion to view new activities.">Emotions</a></li>
                             <li class="top-level"><a href="ActivityView.php" id="activities" title="View your recent, favorite, or trending activities.">Activities</a></li>
                             <li class="top-level"><a href="#" id="account">My Account</a>

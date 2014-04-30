@@ -171,7 +171,7 @@ var DooDah = window.DooDah || {};
         	.appendTo(pnlForgotPassword)
         	.hide(); 
             
-            lnkForgotPassword = $("<a href='#'>Forgot Password?</a>")
+            lnkForgotPassword = $("<a href='" + _lnkForgotPassword + "'>Forgot Password?</a>")
             	.addClass("lnk-forgot-password")
             	.appendTo(pnlForgotPassword)
             	.hide(); 

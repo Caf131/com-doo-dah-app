@@ -20,7 +20,8 @@ else
 		<script type="text/javascript" src="js/jquery-ui-1.10.4/ui/jquery-ui.js"></script>
 		<script type="text/javascript" src="js/Enums.js"></script>	
 		<script type="text/javascript" src="js/ViewScripts/General.js"></script>			
-		<script type="text/javascript" src="js/Services/ActivityService.js"></script>			
+		<script type="text/javascript" src="js/Services/ActivityService.js"></script>
+		<script type="text/javascript" src="js/Services/LoginService.js"></script>						
 		<script type="text/javascript" src="js/js_global.js"></script>			
 		<script type="text/javascript" src="js/ViewScripts/ActivityView.js"></script>
 		<script type="text/javascript" src="js/Controls/FilterControl.js"></script>
@@ -42,7 +43,7 @@ else
                     <div id="nav-list">
                         <ul>
                             <!--<li class="top-level"><a href="./HomeView.php" id="home">Home</a></li>-->
-                            <li class="top-level"><a href="#" id="how" title="Take the tutorial if you are a newcomer or view help documentation.">How it works?</a></li>
+                            <!--<li class="top-level"><a href="#" id="how" title="Take the tutorial if you are a newcomer or view help documentation.">How it works?</a></li>-->
                             <li class="top-level"><a href="EmotionSelection.php" id="emotions" title="Pick your current emotion to view new activities.">Emotions</a></li>
                             <li class="top-level"><a href="ActivityView.php" id="activities" title="View your recent, favorite, or trending activities.">Activities</a></li>
                             <li class="top-level"><a href="#" id="account">My Account</a>
@@ -62,7 +63,7 @@ else
 		<div class="page-content">
 			<div id="welcome-activities">
 				<h1 id="header-text">Activities</h1>
-					<div id="user-info"></div>
+					<div id="userInfo"></div>
 					<!--<div id="pnlFilterControl"></div>-->
 					<div id="result-list">
 						<div id="ctrlActivitySummaryView" class="activity-list-item"></div>

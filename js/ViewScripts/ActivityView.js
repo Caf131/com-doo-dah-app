@@ -3,10 +3,14 @@ $(document).ready(function ()
 	//var pnlFilterControl = $("#pnlFilterControl"); 
 	//pnlFilterControl.FilterControl({}); 
 	
-	
 	var ctrlActivitySummaryView = $("#ctrlActivitySummaryView"); 
 	ctrlActivitySummaryView.ActivityListViewControl({}); 
 	
+	var HandleUserMood = function ()
+	{
+		$("#userInfo").html("Here are some " + userMood.toUpperCase() + " activities to think about"); 
+	}; 
+		
 	var moodValue = -1; 
 	
 	if(userMood == 'afraid')
@@ -48,4 +52,7 @@ $(document).ready(function ()
 	
 	ctrlActivitySummaryView.ActivityListViewControl("SetMoodContext", moodValue); 
 	ctrlActivitySummaryView.ActivityListViewControl("LoadAsync");
+	
+	HandleUserMood(); 
+	
 }); 
